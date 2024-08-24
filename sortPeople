@@ -1,0 +1,28 @@
+class Solution {
+    public String[] sortPeople(String[] names, int[] heights) {
+       int size=heights.length;
+       int reve =heights.length-1;
+       int [] search =Arrays.copyOf(heights,size);
+      Arrays.sort(heights);
+      ArrayList<String> re =new ArrayList<>();
+      String [] find = new String[size];
+      for(int i =0;i<size;i++){
+            for(int j=0;j<size;j++)
+                if(heights[i]==search[j])
+                find[i]=names[j];
+                    // re.add(names[i]);
+                }
+                String [] rev = new String[size];
+                for(int i=0;i<names.length;i++){
+                    rev[reve--]=find[i];
+
+                }
+                // int c=0;
+                // for(int i =size-1;i>=0;i--){
+                //     String temp = find[c];
+                //     find[c++]=find[i];
+                // }
+
+        return rev;
+        }
+}
