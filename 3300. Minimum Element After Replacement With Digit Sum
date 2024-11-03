@@ -1,0 +1,22 @@
+class Solution {
+    public int minElement(int[] nums) {
+       int min;
+       int size =nums.length-1;
+       int resu []= new int[size+1];
+       for(int i=0; i<=size;i++){
+        String str = ""+nums[i];
+        for(int j=0; j<str.length();j++){
+            resu[i]+=Integer.parseInt(""+str.charAt(j));
+        }
+
+       }
+    //    System.out.println("nums = "+nums.length+" resu = "+resu.length);
+        min=resu[0];
+       for(int i=0; i<=size;i++){
+        if(resu[i]<min)
+        min= resu[i];
+        // System.out.println(min);
+        }
+       return min; 
+    }
+}
